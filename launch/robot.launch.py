@@ -92,7 +92,9 @@ def generate_launch_description():
     )
 
     # Visualization
-    rviz_config = PathJoinSubstitution([this_pkg, "etc", "setup.rviz"])
+    rviz_config = PathJoinSubstitution(
+        [FindPackageShare("ur_description"), "rviz", "view_robot.rviz"]
+    )
     rviz = Node(
         package="rviz2",
         executable="rviz2",
