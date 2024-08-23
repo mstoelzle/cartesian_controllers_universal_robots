@@ -18,12 +18,12 @@ def generate_launch_description():
 
     # Declare arguments
     arg_robot_ip = DeclareLaunchArgument(
-        "robot_ip", default_value="192.168.1.9", description="The robot's IP address"
+        "robot_ip", default_value="192.168.1.101", description="The robot's IP address"
     )
     declared_args = [arg_robot_ip]
 
     # Robot description
-    description_file = PathJoinSubstitution([this_pkg, "urdf", "setup.urdf.xacro"])
+    description_file = PathJoinSubstitution([this_pkg, "urdf", "setup_ur5.urdf.xacro"])
     robot_ip = LaunchConfiguration("robot_ip")
     robot_description_content = Command(
         [
